@@ -1,0 +1,19 @@
+.page-container {
+    background-color: #00a2ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.additional-card {
+    width: 800px;
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+}
+
+.parameter {
+    display: flex;
+    margin-bottom: 30px;
+}
