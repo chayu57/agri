@@ -26,7 +26,7 @@ const App = (props) => {
    
     const fetchSensorData = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/sensordata');
+            const response = await axios.get('https://agriculture-rxkg.onrender.com/api/sensordata');
             console.log('Response Data:', response.data);
     
             setState((prevState) => ({
