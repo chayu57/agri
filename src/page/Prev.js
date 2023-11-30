@@ -12,57 +12,62 @@ const containerStyles = {
 };
 
 const Prev = ({ goBack }) => {
-    const [state, setState] = useState(initialState);
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [fetchedData, setFetchedData] = useState({});
-
-
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     const fetchData = async () => {
+        setIsLoading(true);
+        setError(null);
+
         const formattedDate = selectedDate.toISOString().split('T')[0];
         try {
-            const response = await fetch(`/api/sensor-data?date=${formattedDate}`);
+            const response = await fetch(`https://agriculture-rxkg.onrender.com/api/sensordata?date=${formattedDate}`);
+
+            if (!response.ok) {
+                throw new Error('No data available');
+            }
+
             const data = await response.json();
             setFetchedData(data);
         } catch (error) {
             console.error('Error fetching data', error);
+            setError('No data available');
+        } finally {
+            setIsLoading(false);
         }
     };
 
-
     useEffect(() => {
         fetchData();
-    }, [selectedDate])
+    }, [selectedDate]);
 
-
-    const displayData = () => {
-        return (
-            <>
+    const displayData = () => (
+        <>
             <div className="parameter">
                 <label>Soil Moisture:</label>
-                <Input type="text" placeholder={fetchedData.soilMoisture} />
+                <Input type="text" value={fetchedData.soilMoisture} />
             </div>
             <div className="parameter">
                 <label>Total Motor Running Time:</label>
-                <Input type="text" placeholder={fetchedData.totalMotorRunningTime} />
+                <Input type="text" value={fetchedData.totalMotorRunningTime} />
             </div>
             <div className="parameter">
                 <label>Total Water Outflow:</label>
-                <Input type="text" placeholder={fetchedData.totalWaterOutflow} />
+                <Input type="text" value={fetchedData.totalWaterOutflow} />
             </div>
             <div className="parameter">
                 <label>Climate Condition:</label>
-                <Input type="text" placeholder={fetchedData.climateCondition} />
+                <Input type="text" value={fetchedData.climateCondition} />
             </div>
             <div className="parameter">
                 <label>Total Power Consumption:</label>
-                <Input type="text" placeholder={fetchedData.totalPowerConsumption} />
+                <Input type="text" value={fetchedData.totalPowerConsumption}  />
             </div>
         </>
-        );
-    };
+    );
 
-    
     return (
         <div className="page-container">
             <Card className="additional-card">
@@ -79,11 +84,10 @@ const Prev = ({ goBack }) => {
                 <br />
                 <br />
                 <br />
-                {displayData()}
+                {isLoading ? <p>Loading...</p> : (error ? <p>Error: {error}</p> : displayData())}
             </Card>
         </div>
     );
 };
-
 
 export default Prev;
