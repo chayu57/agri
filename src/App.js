@@ -26,7 +26,7 @@ const App = (props) => {
    
     const fetchSensorData = async () => {
         try {
-            const response = await axios.get('https://agriculture-rxkg.onrender.com/api/livesensordata');
+            const response = await axios.get('http://localhost:5000/api/livesensordata');
             console.log('Response Data:', response.data);
     
             setState((prevState) => ({
@@ -60,7 +60,7 @@ const App = (props) => {
     return (
         <>
             <div>
-                <Card className='abc'>
+                <Card className='abc bb'>
                     <div className="skyblue">
                         <h1 className="main-heading"><center>SMART AGRICULTURE SYSTEM</center></h1>
 
@@ -68,27 +68,28 @@ const App = (props) => {
                     </div>
 
 
-                    <Card className='nested-card' style={{ top: '11rem', left: '5%', width: '40%' }}>
+                    
+                    <Card className='nested-card' style={{ top: '12rem', left: '5%', width: '40%' }}>
                         <div className="nested-content"><center><h3>Location 1</h3></center><br />
 
                             <div className="parameter">
-                                <label>Temperature:</label>
+                                <label className='temp'>Temperature:</label>
                                 <Input type="text" value={sensorData.temperature} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Humidity:</label>
+                                <label className='humid'>Humidity:</label>
                                 <Input type="text" value={sensorData.humidity} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Soil Moisture:</label>
+                                <label className='soil'>Soil Moisture:</label>
                                 <Input type="text" value={sensorData.soilMoisture} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Climate Condition:</label>
+                                <label className='clim'>Climate Condition:</label>
                                 <Input type="text" value={sensorData.climateCondition}style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Soil Moisture Level:</label>
+                                <label className='soil-mo'>Soil Moisture Level:</label>
                                 <Input type="text"value={sensorData.soilMoistureLevel} style={{ width: '25%' }} />
                             </div>
 
@@ -97,53 +98,52 @@ const App = (props) => {
                     </Card>
 
 
-                    <Card className='nested-card1' style={{ top: '-21rem', left: '50%', width: '40%' }}>
+                    <Card className='nested-card' style={{ top: '-22rem', left: '50%', width: '40%' }}>
                         <div className="nested-content"><center><h3>Location 2</h3></center><br />
                             <div className="parameter">
-                                <label>Temperature:</label>
+                                <label className='temp'>Temperature:</label>
                                 <Input type="text" value={sensorData.temperature} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Humidity:</label>
+                                <label className='humid'>Humidity:</label>
                                 <Input type="text"  value={sensorData.humidity}    style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Soil Moisture:</label>
+                                <label  className='soil'>Soil Moisture:</label>
                                 <Input type="text" value={sensorData.soilMoisture} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Climate Condition:</label>
+                                <label className='clim'>Climate Condition:</label>
                                 <Input type="text" value={sensorData.climateCondition} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Soil Moisture Level:</label>
+                                <label className='soil-mo'>Soil Moisture Level:</label>
                                 <Input type="text" value={sensorData.soilMoistureLevel} style={{ width: '25%' }} />
                             </div>
 
                         </div>
                     </Card>
 
-
-                    <Card className='nested-card2' style={{ top: '-9rem', left: '5%', width: '40%' }}>
+                    <Card className='nested-card' style={{ top: '-9rem', left: '5%', width: '40%' }}>
                         <div className="nested-content"><center><h3>Location 3</h3></center><br />
                             <div className="parameter">
-                                <label>Temperature:</label>
+                                <label className='temp'>Temperature:</label>
                                 <Input type="text" value={sensorData.temperature} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Humidity:</label>
+                                <label className='humid'>Humidity:</label>
                                 <Input type="text" value={sensorData.humidity}  style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Soil Moisture:</label>
+                                <label  className='soil'>Soil Moisture:</label>
                                 <Input type="text" value={sensorData.soilMoisture} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Climate Condition:</label>
+                                <label className='clim'>Climate Condition:</label>
                                 <Input type="text" value={sensorData.climateCondition} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Soil Moisture Level:</label>
+                                <label className='soil-mo'>Soil Moisture Level:</label>
                                 <Input type="text" value={sensorData.soilMoistureLevel} style={{ width: '25%' }} />
                             </div>
 
@@ -151,49 +151,51 @@ const App = (props) => {
                     </Card>
 
 
-                    <Card className='nested-card3' style={{ top: '-41rem', left: '50%', width: '40%' }}>
+
+                    <Card className='nested-card' style={{ top: '-43rem', left: '50%', width: '40%' }}>
                         <div className="nested-content"><center><h3>Location 4</h3></center><br />
                             <div className="parameter">
-                                <label>Temperature     :</label>
+                                <label className='temp'>Temperature     :</label>
                                 <Input type="text" value={sensorData.temperature} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Humidity:</label>
+                                <label className='humid'>Humidity:</label>
                                 <Input type="text" value={sensorData.humidity}  style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Soil Moisture:</label>
+                                <label  className='soil'>Soil Moisture:</label>
                                 <Input type="text" value={sensorData.soilMoisture} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Climate Condition:</label>
+                                <label className='clim'>Climate Condition:</label>
                                 <Input type="text" value={sensorData.climateCondition} style={{ width: '25%' }} />
                             </div><br />
                             <div className="parameter">
-                                <label>Soil Moisture Level:</label>
+                                <label className='soil-mo'>Soil Moisture Level:</label>
                                 <Input type="text" value={sensorData.soilMoistureLevel} style={{ width: '25%' }} />
                             </div>
                         </div>
                     </Card>
 
 
-                    <Card className='s' style={{ top: '-27rem', left: '5%', width: '85%' }}><center><h4>Live Motor Data </h4></center>
+
+                    <Card className='nested-card' style={{ top: '-27rem', left: '5%', width: '85%' }}><center><h4>Live Motor Data </h4></center>
                         <br />
                         <div className="Live">
-                            <label>Voltage</label>   <Input type="text" value={sensorData.voltage}  style={{ width: '30%' }} />
+                            <label className='volt'>Voltage :</label>   <Input type="text" value={sensorData.voltage}  style={{ width: '30%' }} />
                             <br />
 
-                            <label>Current</label> <Input type="text"value={sensorData.current}  style={{ width: '30%' }} />
+                            <label  className='curr'>Current :</label> <Input type="text"value={sensorData.current}  style={{ width: '30%' }} />
                             <br /></div>
                         <br /><br />
-                        <div className="Live">  <label>Water quantity</label><Input type="text" value={sensorData.waterQuantity}  style={{ width: '30%' }} />
+                        <div className="Live">  <label  className='volt'>Water quantity:</label><Input type="text" value={sensorData.waterQuantity}  style={{ width: '30%' }} />
                             <br />
 
-                            <label>Power Consumption</label> <Input type="text" value={sensorData.powerConsumption}  style={{ width: '30%' }} />
+                            <label  className='volt'>Power Consumption:</label> <Input type="text" value={sensorData.powerConsumption}  style={{ width: '30%' }} />
                             <br /></div><br /><br />
-                        <center><label><h6>Motor Status</h6></label> <Input type="text" value={sensorData.motorStatus} style={{ width: '9%' }} /></center>
+                        <center><label><h6 className='volt'>Motor Status:</h6></label> <Input type="text" value={sensorData.motorStatus} style={{ width: '9%' }} /></center>
 
-                        <Button className='but' onClick={showPrevPage}>Previous Data</Button>
+                       <div className='but12'> <Button className='but ' onClick={showPrevPage}>Previous Data</Button></div>
                     </Card>
 
                 </Card>

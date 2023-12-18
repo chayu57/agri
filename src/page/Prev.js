@@ -23,7 +23,7 @@ const Prev = ({ goBack }) => {
 
         const formattedDate = selectedDate.toISOString().split('T')[0];
         try {
-            const response = await fetch(`https://agriculture-rxkg.onrender.com/api/sensordata?date=${formattedDate}`);
+            const response = await fetch(`http://localhost:5000/api/sensordata?date=${formattedDate}`);
 
             if (!response.ok) {
                 throw new Error('No data available');
@@ -46,24 +46,24 @@ const Prev = ({ goBack }) => {
     const displayData = () => (
         <>
             <div className="parameter">
-                <label>Soil Moisture:</label>
+                <label className='humid1'>Soil Moisture:</label>
                 <Input type="text" value={fetchedData.soilMoisture} />
             </div>
             <div className="parameter">
-                <label>Total Motor Running Time:</label>
+                <label className='soil-mo1'>Total Motor Running Time:</label>
                 <Input type="text" value={fetchedData.totalMotorRunningTime} />
             </div>
             <div className="parameter">
-                <label>Total Water Outflow:</label>
+                <label className='clim1'>Total Water Outflow:</label>
                 <Input type="text" value={fetchedData.totalWaterOutflow} />
             </div>
             <div className="parameter">
-                <label>Climate Condition:</label>
+                <label className='temp1'>Climate Condition:</label>
                 <Input type="text" value={fetchedData.climateCondition} />
             </div>
             <div className="parameter">
-                <label>Total Power Consumption:</label>
-                <Input type="text" value={fetchedData.totalPowerConsumption}  />
+                <label className='volt1'>Total Power Consumption:</label>
+                <Input type="text" value={fetchedData.totalPowerConsumption} />
             </div>
         </>
     );

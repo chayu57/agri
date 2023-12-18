@@ -1,5 +1,60 @@
 
-.body {
-    height: 100%;
-    width: 100%;
+.bb{
+    height: 320vh!important;
+    background-image : url("https://synelixis.com/wp-content/uploads/2017/05/animated-soil.gif");
+    background-size: cover;
+}
+
+.nested-card{
+    margin-left: 30px;
+    background-color: #92c5db!important;
+    padding: 15px;
+    font-weight: bold!important;
+    text-align: center;
+}
+
+.temp{
+    margin-right: 60px!important;
+    
+}
+
+.humid{
+    margin-right: 85px!important;
+}
+.soil{
+    margin-right: 55px!important;
+}
+.clim{
+    margin-right: 20px!important;
+}
+.soil-mo{
+    margin-right: 10px!important;
+}
+.volt{
+    margin-right: 20px!important;
+    font-size: 22px;
+    padding-left: 20px;
+}
+.curr{
+    margin-right: 20px!important;
+    font-size: 25px;
+    padding-left: 100px;
+}
+.but:hover{
+    transition-duration: 1s!important;
+     background-color: rgb(23, 93, 140)!important;
+     color: rgb(71, 164, 240)!important;
+     width: 200px!important;
+     height: 40px;
+}
+.but12{
+   
+    position: relative;
+    left:70vh!important;
+}
+
+.Live{
+    display: flex;
+    padding: 20px;
+   text-align: center!important;
 }
