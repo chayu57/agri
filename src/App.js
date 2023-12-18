@@ -26,7 +26,7 @@ const App = (props) => {
    
     const fetchSensorData = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/livesensordata');
+            const response = await axios.get('https://agriculture-rxkg.onrender.com/api/livesensordata');
             console.log('Response Data:', response.data);
     
             setState((prevState) => ({

@@ -23,7 +23,7 @@ const Prev = ({ goBack }) => {
 
         const formattedDate = selectedDate.toISOString().split('T')[0];
         try {
-            const response = await fetch(`http://localhost:5000/api/sensordata?date=${formattedDate}`);
+            const response = await fetch(`https://agriculture-rxkg.onrender.com/api/sensordata?date=${formattedDate}`);
 
             if (!response.ok) {
                 throw new Error('No data available');
